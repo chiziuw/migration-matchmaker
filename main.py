@@ -17,3 +17,13 @@ class Location:
         if self.rent <= user_budget:
             return True
         return False
+class UserProfile:
+    def __init__(self, budget, industry, density_pref):
+        self.budget = int(budget)
+        self.industry = industry
+        self.density_pref = density_pref
+
+    def is_valid(self):
+        if self.budget > 0 and self.industry != "" and self.density_pref != "":
+            return True
+        return False
