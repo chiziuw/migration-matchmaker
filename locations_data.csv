@@ -1,0 +1,38 @@
+City_Name,State,Population_Density,Average_Rent,Primary_Industry
+Umuahia,Abia,Medium,45000,Manufacturing
+Yola,Adamawa,Medium,35000,Agriculture
+Uyo,Akwa Ibom,Medium,70000,Tech
+Awka,Anambra,Medium,50000,Manufacturing
+Bauchi,Bauchi,Medium,40000,Agriculture
+Yenagoa,Bayelsa,Low,55000,Manufacturing
+Makurdi,Benue,Medium,35000,Agriculture
+Maiduguri,Borno,Medium,30000,Agriculture
+Obudu,Cross River,Low,40000,Tourism
+Asaba,Delta,Medium,80000,Tech
+Abakaliki,Ebonyi,Medium,40000,Agriculture
+Auchi,Edo,Low,45000,Education
+Ado-Ekiti,Ekiti,Low,35000,Education
+Nsukka,Enugu,Medium,45000,Education
+Gwagwalada,FCT,Medium,75000,Education
+Gombe,Gombe,Medium,45000,Tech
+Owerri,Imo,Medium,60000,Education
+Dutse,Jigawa,Low,25000,Agriculture
+Zaria,Kaduna,Medium,50000,Education
+Wudil,Kano,Low,30000,Agriculture
+Katsina,Katsina,Medium,35000,Agriculture
+Birnin Kebbi,Kebbi,Low,25000,Agriculture
+Lokoja,Kogi,Medium,45000,Agriculture
+Offa,Kwara,Low,35000,Education
+Epe,Lagos,Medium,65000,Education
+Lafia,Nasarawa,Low,30000,Agriculture
+Minna,Niger,Medium,40000,Tech
+Ijebu-Ode,Ogun,Medium,55000,Manufacturing
+Akure,Ondo,Medium,50000,Tech
+Osogbo,Osun,Medium,40000,Education
+Iseyin,Oyo,Low,30000,Agriculture
+Jos,Plateau,Medium,45000,Tourism
+Bori,Rivers,Low,50000,Manufacturing
+Sokoto,Sokoto,Medium,30000,Agriculture
+Jalingo,Taraba,Low,25000,Agriculture
+Damaturu,Yobe,Low,25000,Agriculture
+Gusau,Zamfara,Low,25000,Manufacturing
