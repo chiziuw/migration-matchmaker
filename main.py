@@ -57,4 +57,38 @@ def calculate_best_match(user, locations_data):
             valid_matches.append((score, loc))
             
     valid_matches.sort(key=lambda x: x[0], reverse=True)
-    return valid_matches[:2]     
+    return valid_matches[:2]  
+# 4. ADVANCED GUI: DASHBOARD SETUP
+window = tk.Tk()
+window.tittle("Migration Matchmaker")
+window.geometry("750x500")
+window.configure(bg="#F8FAFC")
+#HOVER ANIMATION FUNCTIONS
+def on_enter(e):
+    e.widget['backgroun'] = '#2563eb'
+def on_level(e):
+    e.widget['background'] ='#3b82f6'
+
+#SIDEBAR
+sidebar = tk.Frame(window, bg="#1e293b", width=200)
+sidebar.pack(side="left", fill="y")
+sidebar.pack_propagate(False)
+tk.Label(sidebar, text ="📍", font=("Helvetica", 40), bg="#1E293B", fg="white").pack(pady=(30, 0))
+tk.Label(sidebar, text="Migration\nMatchmaker", font=("Helvetica", 16, "bold"), bg="#1E293B", fg="white").pack(pady=(10, 30))
+tk.Label(sidebar, text="🟢 System Online", font=("Helvetica", 10), bg="#1E293B", fg="#4ADE80").pack(side="bottom", pady=20)
+
+# MAIN CONTENT AREA
+main_content = tk.Frame(window, bg="#F8FAFC")
+main_content.pack(side="right", fill="both", expand=True)
+
+screens = {}
+
+def show_screen(screen_name):
+    for frame in screens.values():
+        frame.pack_forget()
+    screens[screen_name].pack(fill="both", expand=True)
+
+screens["Welcome"] = tk.Frame(main_content, bg="#F8FAFC")
+screens["Questionnaire"] = tk.Frame(main_content, bg="#F8FAFC")
+screens["Loading"] = tk.Frame(main_content, bg="#F8FAFC")
+screens["Results"] = tk.Frame(main_content, bg="#F8FAFC")  
