@@ -119,7 +119,31 @@ tk.Label(card, text="Preferred Density:", font=("Helvetica", 11, "bold"), bg="wh
 density_dropdown = ttk.Combobox(card, values=["Low", "Medium"], font=("Helvetica", 12), width=28, state="readonly")
 density_dropdown.pack(pady=(5, 20))
 
+git checkout -b feature/loading-result-screen
+# SCREEN 3: LOADING SCREEN
+tk.Label(screens["Loading"], text="⚙️ Processing Data...", font=("Helvetica", 18, "bold"), bg="#F8FAFC", fg="#0F172A").pack(pady=(150, 20))
+progress_bar = ttk.Progressbar(screens["Loading"], orient="horizontal", length=300, mode="determinate")
+progress_bar.pack()
+loading_text = tk.Label(screens["Loading"], text="Scanning the country...", font=("Helvetica", 10), bg="#F8FAFC", fg="#64748B")
+loading_text.pack(pady=10)
 
+# SCREEN 4: RESULTS
+tk.Label(screens["Results"], text="Top Results", font=("Helvetica", 22, "bold"), bg="#F8FAFC", fg="#0F172A").pack(pady=(40, 15))
+result_text = tk.StringVar()
+result_display = tk.Label(screens["Results"], text="", textvariable=result_text, font=("Helvetica", 13), bg="#F8FAFC", fg="#334155", justify="left")
+result_display.pack(pady=10)
+
+def reset_and_restart():
+    budget_entry.delete(0, tk.END)
+    industry_dropdown.set('')
+    density_dropdown.set('')
+    show_screen("Welcome")
+
+restart_button = tk.Button(screens["Results"], text="← Search Again", font=("Helvetica", 11, "bold"), bg="#64748B", fg="white", bd=0, padx=15, pady=8, cursor="hand2", command=reset_and_restart)
+restart_button.pack(pady=30)
+git add main.py
+git commit -m "Bulit animated loading screen and dynamic resultzs page"
+git push -u origin feature/loading-result-screen
 
 
 
