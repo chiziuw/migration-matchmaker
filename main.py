@@ -91,4 +91,35 @@ def show_screen(screen_name):
 screens["Welcome"] = tk.Frame(main_content, bg="#F8FAFC")
 screens["Questionnaire"] = tk.Frame(main_content, bg="#F8FAFC")
 screens["Loading"] = tk.Frame(main_content, bg="#F8FAFC")
-screens["Results"] = tk.Frame(main_content, bg="#F8FAFC")  
+screens["Results"] = tk.Frame(main_content, bg="#F8FAFC") 
+# SCREEN 1: WELCOME
+tk.Label(screens["Welcome"], text="Find Your Perfect City!", font=("Helvetica", 24, "bold"), bg="#F8FAFC", fg="#0F172A").pack(pady=(80, 10))
+tk.Label(screens["Welcome"], text="Answer some questions and we'll analyze all 36 states\nacross Nigeria to find your most optimal destination.", font=("Helvetica", 13), bg="#F8FAFC", fg="#64748B", justify="center").pack(pady=10)
+
+start_button = tk.Button(screens["Welcome"], text="Launch Analysis", font=("Helvetica", 12, "bold"), bg="#3B82F6", fg="white", bd=0, padx=20, pady=10, cursor="hand2", command=lambda: show_screen("Questionnaire"))
+start_button.pack(pady=40)
+start_button.bind("<Enter>", on_enter)
+start_button.bind("<Leave>", on_leave)
+
+# SCREEN 2: QUESTIONNAIRE
+tk.Label(screens["Questionnaire"], text="Enter Your Information", font=("Helvetica", 20, "bold"), bg="#F8FAFC", fg="#0F172A").pack(pady=(40, 20))
+
+card = tk.Frame(screens["Questionnaire"], bg="white", padx=40, pady=30, relief="flat")
+card.pack()
+
+tk.Label(card, text="Max Monthly Rent (₦):", font=("Helvetica", 11, "bold"), bg="white", fg="#334155").pack(anchor="w")
+budget_entry = ttk.Entry(card, font=("Helvetica", 12), width=30)
+budget_entry.pack(pady=(5, 15))
+
+tk.Label(card, text="Target Industry:", font=("Helvetica", 11, "bold"), bg="white", fg="#334155").pack(anchor="w")
+industry_dropdown = ttk.Combobox(card, values=["Agriculture", "Education", "Tourism", "Tech", "Manufacturing"], font=("Helvetica", 12), width=28, state="readonly")
+industry_dropdown.pack(pady=(5, 15))
+
+tk.Label(card, text="Preferred Density:", font=("Helvetica", 11, "bold"), bg="white", fg="#334155").pack(anchor="w")
+density_dropdown = ttk.Combobox(card, values=["Low", "Medium"], font=("Helvetica", 12), width=28, state="readonly")
+density_dropdown.pack(pady=(5, 20))
+
+
+
+
+
