@@ -44,4 +44,17 @@ def load_locations(filename):
     except FileNotFoundError:
         print(f"Error: Could not find {filename}")
     return locations_list
-    
+# 3. MATCHING ALGORITHM
+def calculate_best_match(user, locations_data):
+    valid_matches = []
+    for loc in locations_data:
+        score = 0
+        if loc.is_affordable(user.budget):
+            if loc.industry == user.industry:
+                score += 2 
+            if loc.density == user.density_pref:
+                score += 1 
+            valid_matches.append((score, loc))
+            
+    valid_matches.sort(key=lambda x: x[0], reverse=True)
+    return valid_matches[:2]     
